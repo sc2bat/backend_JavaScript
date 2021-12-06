@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_ImageControll02</title>
+    <style type="text/css">
+        /*  */
+    </style>
+    <script type="text/JavaScript">
+        /*  */
+        // alert(i);
+        function changeImg(){
+            // 그림을 클릭하면 숫자하나를 입력받아서 "숫자.jpg" 파일로 그림을 바꿔주세요
+            var number = prompt("숫자를 입력하세요(1~10)", "1");
+            var filename = "images/" + number + ".jpg";
+            document.getElementById("target").src = filename;
+        }
+        function changeImg2(){
+            var i = Number(prompt('숫자를 입력하세요', '3'));
+            document.getElementById("target2").src = "images/" + i + ".jpg";
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="target" onClick="changeImg();">
+    <img src="images/2.jpg" id="target2" onClick="changeImg2();">
+</body>
+</html>

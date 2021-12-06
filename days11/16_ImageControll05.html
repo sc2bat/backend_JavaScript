@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16_ImageControll05</title>
+    <style type="text/css">
+        /*  */
+    </style>
+    <script type="text/JavaScript">
+        /*  */
+        var number = 1;
+        var timer; // setInterval 을 저장할 참조변수
+        function start(){
+            timer = setInterval( function(){
+                document.getElementById("target").src = "images/" + number + ".jpg";
+                number++;
+                if(number == 11){
+                number = 1;
+                }    
+            }, 1000);
+        }
+        function stop(){
+            window.clearInterval(timer);
+            // 
+        }
+    </script>
+</head>
+<body onLoad="start();">
+    <!-- // 시작과 함께 타이머 실행 -->
+    <img src="images/1.jpg" id="target" onMouseover="stop();" onMouseout="start();">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17_ImageControll06</title>
+    <style type="text/css">
+        /*  */
+        #a1 {position: absolute; width: 170px; height:255px; border:2px solid black; top: 100px; left: 100px;}
+    </style>
+    <script type="text/JavaScript">
+        /*  */
+        // setInterval 을 이요해서 1초에 20도씩 회전하게 해주세요 마우스를 올리면 반대방향으로 회전, 마우스가 빠져나가면 원래방향으로 회전
+        var aa = 0;
+        var timer1, timer2;
+        function clockwise(){
+            window.clearInterval(timer2);
+            timer1 = window.setInterval( function(){
+                aa += 20;
+                document.getElementById("a1").style.webkitTransform='rotate(' + aa + 'deg)';
+                // if(aa==360)aa=0;
+            }, 500);
+        }
+        
+        function counterclockwise(){
+            window.clearInterval(timer1); // 시계방향 회전 중인 setInterval 멈춤
+            timer2 = window.setInterval( function() { // 새로 setInterval 시작
+                aa -= 20;        
+                document.getElementById("a1").style.webkitTransform='rotate(' + aa + 'deg)';
+                // if(aa==0)aa=360;
+            }, 500);
+        }
+        
+    </script>
+</head>
+<body onload="clockwise();">
+    <script type="text/JavaScript">
+
+    </script>
+    <div id='a1' onmouseout="clockwise();" onmouseover="counterclockwise();">
+        <img src="images/1.jpg" alt="">
+    </div>
+</body>
+</html>

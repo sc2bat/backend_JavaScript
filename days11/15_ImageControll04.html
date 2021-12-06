@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15_ImageControll04</title>
+    <style type="text/css">
+        /*  */
+    </style>
+    <script type="text/JavaScript">
+        /*  */
+        // setInterval 을 이용해서 그림이 자동으로 1초에 한번씩 변경되게 코딩
+        var number = 2;
+        setInterval( function(){
+            document.getElementById("target").src = "images/" + number + ".jpg";
+            number++;
+            if(number == 11){
+                number = 1;
+            }
+        }, 1000);
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="target">
+</body>
+</html>
